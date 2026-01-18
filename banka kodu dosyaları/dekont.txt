@@ -1,0 +1,2 @@
+Musteri: burak      | Islem: PARA CEKME      | Tutar: 5000.00 TL
+Musteri: burak      | Islem: PARA YATIRMA    | Tutar: 16000.00 TL
