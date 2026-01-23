@@ -9,11 +9,11 @@ struct musteriHesabi {
     double mevcutBakiye;
 };
 
-// --- FONKSİYON PROTOTİPLERİ ---
+// FONKSİYON PROTOTİPLERİ 
 double faizHesapla(double bakiye, double faizOrani);
 void bakiyeEkrani(double sonBakiye, const char kullaniciAdi[]);
 
-// --- FONKSİYONLAR ---
+// FONKSİYONLAR 
 double faizHesapla(double bakiye, double faizOrani) {
     return bakiye + (bakiye * faizOrani / 100.0);
 }
@@ -35,7 +35,7 @@ void dekontYaz(const char isim[], const char islemTuru[], double tutar) {
     }
 }
 
-// --- ANA PROGRAM ---
+//  ANA PROGRAM 
 int main() {
    
     struct musteriHesabi musteriler[50];
@@ -62,9 +62,7 @@ int main() {
     fclose(f);
     printf("Sistem yuklendi. Toplam Musteri: %d\n", musteriSayisi);
 
-    // ==========================================
     // YENİ GİRİŞ VE KAYIT ALGORİTMASI
-    // ==========================================
     
     printf("\n--- BANKA GIRIS EKRANI ---\n");
     printf("Kullanici Adinizi Giriniz: ");
@@ -110,7 +108,7 @@ int main() {
         }
 
     } else {
-        // --- SENARYO B: KULLANICI YOK -> HESAP OLUŞTURMA ---
+        //  SENARYO B: KULLANICI YOK -> HESAP OLUŞTURMA 
         
         printf("\nBu isimde bir kullanici bulunamadi.\n");
         printf("Yeni hesap olusturmak ister misiniz? (1: Evet, 0: Hayir): ");
@@ -147,9 +145,9 @@ int main() {
         }
     }
 
-    // ==========================================
+
     // MENÜ İŞLEMLERİ 
-    // ==========================================
+
     do {
         printf("\n======= BANKACILIK MENUSU =======\n 1. Bakiye Goruntuleme \n 2. Para Cekme \n 3. Para Yatirma \n 4. Faiz Hesaplama \n 0. Cikis \n Seciminiz: ");
         scanf("%d", &secim);
@@ -207,9 +205,9 @@ int main() {
         }
     } while (secim != 0);
 
-    // ==========================================
-    // ADIM 4: TÜM VERİTABANINI GÜNCELLEME (Kritik Kısım)
-    // ==========================================
+
+    // ADIM 4: TÜM VERİTABANINI GÜNCELLEME 
+
     f = fopen("hesaplar.txt", "w");
     if (f != NULL) {
         // Dizideki tüm müşterileri (değişiklik yapmayanı bile) dosyaya geri yazıyoruz
@@ -225,4 +223,5 @@ int main() {
     }
 
     return 0;
+
 }
